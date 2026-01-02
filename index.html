@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Something is Brewing </title>
+  <title>Let's Drift Bold</title>
+
+  <meta name="description" content="Something is Brewing — Join the Drift Bold movement." />
+  <meta property="og:title" content="Let's Drift Bold" />
+  <meta property="og:description" content="Join the movement today." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="favicon.png" />
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
       color: white;
       display: flex;
       justify-content: center;
@@ -20,29 +27,81 @@
 
     .overlay {
       background: rgba(0,0,0,0.55);
-      padding: 24px;
-      border-radius: 16px;
-      max-width: 420px;
-      width: 90%;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 40px 28px;
+      border-radius: 20px;
+      max-width: 480px;
+      width: 92%;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+      animation: fadeIn 0.9s ease both;
     }
 
-    h1 { font-size: 1.8rem; margin-bottom: 10px; }
-    p { font-size: 1rem; line-height: 1.5; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      letter-spacing: 0.02em;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    p.tagline {
+      opacity: 0.9;
+      margin: 0 0 28px;
+      font-size: 1.05rem;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
     a.button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      background: white;
-      color: black;
-      font-weight: bold;
+      display: block;
+      padding: 14px 18px;
+      border-radius: 12px;
       text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.14);
+      color: white;
+      transition: transform .12s ease, background .12s ease, border .12s ease;
+    }
+
+    a.button:hover,
+    a.button:active {
+      transform: translateY(1px) scale(0.99);
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .whatsapp {
+      background: rgba(37, 211, 102, 0.25);
+      border-color: rgba(37, 211, 102, 0.45);
+    }
+
+    .whatsapp:hover {
+      background: rgba(37, 211, 102, 0.32);
+      border-color: rgba(37, 211, 102, 0.6);
     }
 
     @media (min-width: 768px) {
       h1 { font-size: 2.4rem; }
-      p { font-size: 1.1rem; }
+      p.tagline { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -50,11 +109,19 @@
 <body>
   <div class="overlay">
     <h1>Something is Brewing.</h1>
-    <p> Join the movement today </p>
+    <p class="tagline">Join the movement today.</p>
 
-    <a class="button" href="mailto:aditya@letsdriftbold.com">
-      Get in Touch
-    </a>
+    <div class="section-label">Get in Touch</div>
+
+    <div class="actions">
+      <a class="button whatsapp" href="https://wa.me/XXXXXXXXXX" target="_blank">
+        WhatsApp
+      </a>
+
+      <a class="button" href="mailto:aditya@letsdriftbold.com?subject=Lets Drift Bold — Inquiry">
+        Email
+      </a>
+    </div>
   </div>
 </body>
 </html>
